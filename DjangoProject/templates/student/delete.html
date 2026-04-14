@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<style>
+    .inputClass{
+        width: 200px;
+    }
+</style>
+<body>
+<h3>{{ title }}</h3>
+<form method="post">
+    {% csrf_token %}
+   确定要删除id:{{ student.id }} name:{{ student.name }} age:{{ student.age }} 的数据吗
+    <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+
+</html>

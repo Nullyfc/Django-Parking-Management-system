@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<style>
+
+</style>
+<body>
+<h3>{{ title }}</h3>
+<form action="/book/add/" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>图书名称:</td>
+            <td>
+                <input type="text" name="bookName">
+            </td>
+
+        </tr>
+         <tr>
+            <td>出版日期:</td>
+            <td>
+                 <input type="date" name="publishDate" id="StartDate" value='@DateTime.Now.ToString("yyyy-MM-dd")' />
+            </td>
+
+        </tr>
+         <tr>
+            <td>图书类别:</td>
+            <td>
+                <label>
+                    <select name="bookType_id">
+                        {% for bookType in bookTypeList %}
+                                <option value="{{ bookType.id }}">{{ bookType.bookTypeName }}</option>
+                        {%  endfor %}
+                    </select>
+                </label>
+            </td>
+
+        </tr>
+         <tr>
+            <td>图书价格:</td>
+            <td>
+                <input type="text" name="price">
+            </td>
+        </tr>
+    <tr>
+        <td colspan="2">
+
+            <input type="submit" value="提交">
+        </td>
+    </tr>
+    </table>
+
+</form>
+</body>
+</html>

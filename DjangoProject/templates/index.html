@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+<p>
+    Django5
+</p>
+<div style="color:blue;height: 50px;width: 500px;">
+{{ msg }}
+</div>
+
+<div style="color:red;">
+    <p>内置过滤器</p>
+    capfirst:{{ msg | capfirst }}<br>
+    length:{{ msg|length }}<br>
+    date:{{ date  }} ->> {{ date | date:'Y-m-d' }}<br>
+</div>
+</body>
+</html>
